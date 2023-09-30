@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Push And Pop</title>
+    <script>
+        let array = [];
+        let size = array.length;
+        let max = 5;
+        function push() {
+            let value = document.getElementById("value").value;
+            if (size < max) {
+                array[size] = value;
+                size++;   
+            } else {
+                alert("Stack is full.");
+            }
+            document.getElementById("value").value="";
+        }
+        function pop() {
+            if (size > 0) {
+                size--;
+                array.length = size;
+            } else {
+                alert("Stack is empty.")
+            }
+        }
+        function display(){
+            console.warn(`Our stack array is ${array}`);
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div style="margin: auto; width: 300px;">
+        <h3>Stack Data Structure</h3>
+        <input type="text" id="value" placeholder="Element" style="margin-bottom: 20px;">
+        <button onclick="push()" style="display: block; margin-bottom: 20px;">Push Element</button>       
+        <button onclick="pop()" style="display: block;margin-bottom: 20px;">Pop Element</button>
+        <button onclick="display()" style="display: block;">Display Element</button>
+    </div>
+</body>
+
+</html>
